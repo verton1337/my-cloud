@@ -1,4 +1,5 @@
 # my-cloud
+#Делаю свое облако бэкэнд на DRF, фронт на Vue
 
 ## Project setup
 ```
