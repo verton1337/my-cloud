@@ -3,32 +3,29 @@
         
       
             <div class="content pure-g">
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
-                <div class="pure-u-1-4 showed-element"><img src="https://picsum.photos/300/300" alt=""></div>
+                <div v-for="photo in allPhotos" :key="photo.id" class="pure-u-1-4 showed-element">
+                    <img :src="photo.url" alt=""></div>
+                
             </div>
 
      
     </div>
 </template>
 <script>
+import { mapGetters, mapActions } from "vuex";
 export default {
+    name: "mainPage",
+    computed: mapGetters(['allPhotos']),
+    methods: mapActions(['fetchPhotos']),
+    async mounted() {
+        this.fetchPhotos()
+    },
     
 }
 </script>
-<style lang="">
-    
+<style scoped>
+    img{
+        width: 300px;
+        height: 300px;
+    }
 </style>
