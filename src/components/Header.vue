@@ -2,7 +2,7 @@
     <div class="header">
         <div class="nav-menu">
             <ul class="pure-g">
-                <li class="pure-u-1-5"><img src="https://picsum.photos/64/64" alt="logo" class="logo"></li>
+                <li class="pure-u-1-5"><router-link to="/"><img src="https://picsum.photos/64/64" alt="logo" class="logo"></router-link></li>
                 <li class="pure-u-3-5"><p></p></li>
                 <li class="pure-u-1-5"><a @click="showAddFileForm" href="#" class="pure-button button-success" id="add-file-btn">Добавить файл</a>
                 

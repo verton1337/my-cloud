@@ -4,7 +4,9 @@
       
             <div class="content pure-g">
                 <div v-for="photo in allPhotos" :key="photo.id" class="pure-u-1-4 showed-element">
-                    <img :src="photo.url" alt=""></div>
+                    <router-link :to="{ name: 'DeletePage', params:{photo: photo.url }}"><img :src="photo.url" alt=""></router-link>
+                    
+                </div>
                 
             </div>
 
@@ -16,7 +18,12 @@ import { mapGetters, mapActions } from "vuex";
 export default {
     name: "mainPage",
     computed: mapGetters(['allPhotos']),
-    methods: mapActions(['fetchPhotos']),
+    methods: {
+        ...mapActions(['fetchPhotos']),
+
+    
+    },
+
     async mounted() {
         this.fetchPhotos()
     },
