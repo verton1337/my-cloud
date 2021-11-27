@@ -12,7 +12,7 @@ export default createStore({
   },
   actions: {
     async fetchPhotos(ctx){
-      const res = await fetch("https://jsonplaceholder.typicode.com/photos?_limit=16");
+      const res = await fetch("http://127.0.0.1:7777/api/api/?format=json");
       const photos = await res.json();
       ctx.commit('updatePhotos', photos);
     }
